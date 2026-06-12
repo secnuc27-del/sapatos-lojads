@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumière — Sapatos de Luxo</title>
+  <meta name="description" content="A loja de sapatos premium que você estava esperando. Tênis, sociais, sandálias e botas com atendimento pelo WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== LOADER GLOBAL ===== -->
+  <div id="lumiere-loader" class="lumiere-loader-overlay">
+    <div class="loader-content">
+      <svg class="gegga-svg">
+        <defs>
+          <filter id="gegga">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="inreGegga" />
+            <feComposite in="SourceGraphic" in2="inreGegga" operator="atop" />
+          </filter>
+        </defs>
+      </svg>
+      <svg class="snurra-svg" width="200" height="200" viewBox="0 0 200 200">
+        <defs>
+          <linearGradient id="linjärGradient">
+            <stop class="stopp1" offset="0" />
+            <stop class="stopp2" offset="1" />
+          </linearGradient>
+          <linearGradient y2="160" x2="160" y1="40" x1="40" gradientUnits="userSpaceOnUse" id="gradient" xlink:href="#linjärGradient" />
+        </defs>
+        <path class="halvan-anim" d="m 164,100 c 0,-35.346224 -28.65378,-64 -64,-64 -35.346224,0 -64,28.653776 -64,64 0,35.34622 28.653776,64 64,64 35.34622,0 64,-26.21502 64,-64 0,-37.784981 -26.92058,-64 -64,-64 -37.079421,0 -65.267479,26.922736 -64,64 1.267479,37.07726 26.703171,65.05317 64,64 37.29683,-1.05317 64,-64 64,-64" />
+        <circle class="strecken-anim" cx="100" cy="100" r="64" />
+      </svg>
+      <svg class="skugga-svg" width="200" height="200" viewBox="0 0 200 200">
+        <path class="halvan-anim" d="m 164,100 c 0,-35.346224 -28.65378,-64 -64,-64 -35.346224,0 -64,28.653776 -64,64 0,35.34622 28.653776,64 64,64 35.34622,0 64,-26.21502 64,-64 0,-37.784981 -26.92058,-64 -64,-64 -37.079421,0 -65.267479,26.922736 -64,64 1.267479,37.07726 26.703171,65.05317 64,64 37.29683,-1.05317 64,-64 64,-64" />
+        <circle class="strecken-anim" cx="100" cy="100" r="64" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo" onclick="navigate('home'); return false;">
+        <span class="logo-name">Lumière</span>
+        <span class="logo-dot">✦</span>
+      </a>
+      <div class="animated-tabs-container">
+        <!-- Active Layer (Clipped overlay) -->
+        <div class="active-tabs-overlay" id="activeTabsOverlay">
+          <div class="active-tabs-inner">
+            <div class="active-tab-item">Início</div>
+            <div class="active-tab-item">Coleção</div>
+            <div class="active-tab-item">Contato</div>
+          </div>
+        </div>
+        <!-- Inactive Layer (Base links) -->
+        <nav class="nav" id="nav">
+          <a href="#" onclick="navigate('home'); return false;" id="nav-home">Início</a>
+          <a href="#" onclick="navigate('produtos'); return false;" id="nav-produtos">Coleção</a>
+          <a href="#" onclick="navigate('contato'); return false;" id="nav-contato">Contato</a>
+        </nav>
+      </div>
+      <div class="header-actions">
+        <!-- Theme Toggle Switch -->
+        <div class="theme-toggle" onclick="toggleTheme()" role="button" aria-label="Alternar Tema" id="themeToggle" tabindex="0">
+          <div class="theme-toggle-track">
+            <div class="theme-toggle-thumb">
+              <!-- Moon Icon (Default Dark) -->
+              <svg class="toggle-moon-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+              <!-- Sun Icon (Light) -->
+              <svg class="toggle-sun-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;color:#3f3b35;">
+                <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+              </svg>
+            </div>
+            <div class="theme-toggle-track-icon">
+              <!-- Sun Icon when Dark -->
+              <svg class="track-sun-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+              </svg>
+              <!-- Moon Icon when Light -->
+              <svg class="track-moon-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;color:#3f3b35;">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <button class="cart-btn" onclick="toggleCarrinho()" aria-label="Carrinho" id="cartBtn">
+          <span class="cart-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+          </span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== PÁGINA: HOME ===== -->
+  <div id="page-home" class="page active">
+
+    <!-- HERO -->
+    <section class="hero">
+      <canvas id="heroCanvas"></canvas>
+      <div class="hero-noise"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <div class="hero-label reveal">
+            <span class="dot"></span> Nova Coleção 2025
+          </div>
+          <h1 class="hero-h1 reveal">
+            <span class="line">O Sapato</span>
+            <span class="line gold-line">Perfeito</span>
+            <span class="line">Para Você.</span>
+          </h1>
+          <p class="hero-sub reveal">Modelos exclusivos selecionados para quem não abre mão de estilo, conforto e atitude.</p>
+          <div class="hero-btns reveal">
+            <button class="btn-glow" onclick="navigate('produtos')">
+              <span>Explorar Coleção</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <a href="https://wa.me/5599999999999" target="_blank" class="btn-ghost">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.05 2C6.495 2 1.988 6.507 1.986 12.062c-.001 1.966.516 3.885 1.498 5.566L2 22l4.484-1.175a10.117 10.117 0 0 0 5.562 1.594h.004c5.554 0 10.062-4.507 10.064-10.062.001-2.69-1.046-5.217-2.948-7.117A9.947 9.947 0 0 0 12.05 2z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+          <div class="hero-stats reveal">
+            <div class="stat"><span class="stat-n" data-target="2400">0</span><span class="stat-l">Clientes</span></div>
+            <div class="stat-div"></div>
+            <div class="stat"><span class="stat-n" data-target="98">0</span><span class="stat-l">% Satisfação</span></div>
+            <div class="stat-div"></div>
+            <div class="stat"><span class="stat-n" data-target="80">0</span><span class="stat-l">Modelos</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-card-3d" id="heroCard">
+            <div class="hero-card-inner">
+              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900&q=90" alt="Tênis em destaque" class="hero-img" />
+              <div class="hero-card-overlay">
+                <div class="hero-card-tag">✦ Mais Vendido</div>
+                <div class="hero-card-info">
+                  <p class="hero-card-name">Air Pulse Elite</p>
+                  <p class="hero-card-price">R$ 289,90</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="floating-pill pill-1">🔥 Tendência 2025</div>
+          <div class="floating-pill pill-2">⚡ Entrega em 24h</div>
+          <div class="rating-badge">
+            <div class="rating-stars">★★★★★</div>
+            <p>+2.400 avaliações</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll">
+        <span>Rolar</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+
+
+    <!-- CATEGORIAS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Navegue por</p>
+          <h2 class="section-title">Categorias</h2>
+        </div>
+        <div class="categories-grid">
+          <button class="cat-card reveal" onclick="navigate('produtos','Tênis')" style="--delay:0s">
+            <div class="cat-img"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80" alt="Tênis" /></div>
+            <div class="cat-overlay"><span>Tênis</span></div>
+          </button>
+          <button class="cat-card reveal" onclick="navigate('produtos','Social')" style="--delay:.05s">
+            <div class="cat-img"><img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=400&q=80" alt="Social" /></div>
+            <div class="cat-overlay"><span>Social</span></div>
+          </button>
+          <button class="cat-card reveal" onclick="navigate('produtos','Sandálias')" style="--delay:.1s">
+            <div class="cat-img"><img src="https://images.unsplash.com/photo-1603487742131-4160ec999306?w=400&q=80" alt="Sandálias" /></div>
+            <div class="cat-overlay"><span>Sandálias</span></div>
+          </button>
+          <button class="cat-card reveal" onclick="navigate('produtos','Botas')" style="--delay:.15s">
+            <div class="cat-img"><img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=400&q=80" alt="Botas" /></div>
+            <div class="cat-overlay"><span>Botas</span></div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTAQUES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Selecionados para você</p>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
+            <h2 class="section-title">Em Destaque</h2>
+            <button class="link-btn" onclick="navigate('produtos')">Ver Todos →</button>
+          </div>
+        </div>
+        <div class="products-grid" id="destaquesGrid"></div>
+      </div>
+    </section>
+
+    <!-- BANNER LUXO -->
+    <section class="luxury-banner">
+      <div class="luxury-bg">
+        <img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=1400&q=80" alt="Colecao" class="luxury-bg-img" />
+        <div class="luxury-overlay"></div>
+      </div>
+      <div class="container luxury-inner reveal">
+        <p class="section-eyebrow light">Edição Limitada</p>
+        <h2 class="luxury-title">Feito para <em>durar</em>.</h2>
+        <p class="luxury-sub">Cada par é escolhido com critério. Materiais premium, acabamento impecável, estilo atemporal.</p>
+        <button class="btn-glow" onclick="navigate('produtos')"><span>Descobrir Coleção</span></button>
+      </div>
+    </section>
+
+    <!-- PROMOÇÕES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow promo-ey">🔥 Ofertas da Semana</p>
+          <h2 class="section-title">Promoções</h2>
+        </div>
+        <div class="products-grid" id="promosGrid"></div>
+      </div>
+    </section>
+
+    <!-- VANTAGENS -->
+    <section class="section">
+      <div class="container vantagens-grid">
+        <div class="vantagem-card reveal" style="--delay:0s">
+          <div class="vantagem-icon-wrap"><span>🚚</span></div>
+          <h3>Entrega Rápida</h3>
+          <p>Em até 24h para todo o Brasil</p>
+        </div>
+        <div class="vantagem-card reveal" style="--delay:.1s">
+          <div class="vantagem-icon-wrap"><span>💬</span></div>
+          <h3>Atendimento Humano</h3>
+          <p>Direto no WhatsApp, sem robôs</p>
+        </div>
+        <div class="vantagem-card reveal" style="--delay:.2s">
+          <div class="vantagem-icon-wrap"><span>🔄</span></div>
+          <h3>Troca Garantida</h3>
+          <p>7 dias para trocar ou devolver</p>
+        </div>
+        <div class="vantagem-card reveal" style="--delay:.3s">
+          <div class="vantagem-icon-wrap"><span>⭐</span></div>
+          <h3>Premium Quality</h3>
+          <p>Curadoria de modelos exclusivos</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div class="cta-glow"></div>
+          <p class="section-eyebrow light">Pronto para comprar?</p>
+          <h2 class="cta-title">Fale com a gente agora.</h2>
+          <p class="cta-sub">Nossa equipe está disponível seg–sáb, 9h às 19h.</p>
+          <a href="https://wa.me/5599999999999" target="_blank" class="btn-glow-green">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.05 2C6.495 2 1.988 6.507 1.986 12.062c-.001 1.966.516 3.885 1.498 5.566L2 22l4.484-1.175a10.117 10.117 0 0 0 5.562 1.594h.004c5.554 0 10.062-4.507 10.064-10.062.001-2.69-1.046-5.217-2.948-7.117A9.947 9.947 0 0 0 12.05 2z"/></svg>
+            <span>Abrir WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- fim #page-home -->
+
+  <!-- ===== PÁGINA: PRODUTOS ===== -->
+  <div id="page-produtos" class="page">
+    <div class="page-hero-small">
+      <div class="container">
+        <p class="section-eyebrow light">Nossa loja</p>
+        <h1 class="page-big-title">Coleção Completa</h1>
+        <p class="page-big-sub" id="produtosCount"></p>
+      </div>
+    </div>
+    <div class="container" style="padding-bottom:5rem">
+      <div class="filters-row">
+        <div class="search-wrap">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="searchInput" placeholder="Buscar modelo..." oninput="filtrarProdutos()" class="search-input" />
+        </div>
+        <button class="btn-filter" onclick="toggleFiltros()" id="filterBtn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+          Filtros
+        </button>
+      </div>
+
+      <div class="filters-panel" id="filtrosPanel">
+        <div class="filter-group">
+          <label class="filter-label">Categoria</label>
+          <div class="filter-chips" id="catChips"></div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Preço máximo: <span class="price-badge">R$ <span id="precoLabel">500</span></span></label>
+          <input type="range" min="50" max="500" step="10" value="500" oninput="document.getElementById('precoLabel').textContent=this.value; filtrarProdutos()" id="precoRange" class="range-input" />
+        </div>
+        <div class="filter-group">
+          <label class="filter-check">
+            <input type="checkbox" id="soPromo" onchange="filtrarProdutos()" />
+            <span class="checkmark"></span>
+            Apenas promoções
+          </label>
+        </div>
+      </div>
+
+      <div class="products-grid" id="produtosGrid"></div>
+    </div>
+  </div>
+
+  <!-- ===== PÁGINA: DETALHE ===== -->
+  <div id="page-detalhe" class="page">
+    <div class="container" style="padding-top:6rem;padding-bottom:5rem;">
+      <button class="btn-back" onclick="navigate('produtos')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+        Voltar
+      </button>
+      <div class="detalhe-grid" id="detalheConteudo"></div>
+    </div>
+  </div>
+
+  <!-- ===== PÁGINA: CARRINHO ===== -->
+  <div id="page-carrinho" class="page">
+    <div class="page-hero-small">
+      <div class="container">
+        <p class="section-eyebrow light">Sua seleção</p>
+        <h1 class="page-big-title">Carrinho</h1>
+      </div>
+    </div>
+    <div class="container" style="padding-bottom:5rem;">
+      <div class="carrinho-layout" id="carrinhoLayout"></div>
+    </div>
+  </div>
+
+  <!-- ===== PÁGINA: CONTATO ===== -->
+  <div id="page-contato" class="page">
+    <div class="page-hero-small">
+      <div class="container">
+        <p class="section-eyebrow light">Fale conosco</p>
+        <h1 class="page-big-title">Contato</h1>
+      </div>
+    </div>
+    <div class="container" style="padding-bottom:5rem;">
+      <div class="contato-layout">
+        <div class="contato-cards">
+          <div class="contato-card reveal">
+            <div class="contato-icon-wrap">💬</div>
+            <div><p class="contato-label">WhatsApp</p><p class="contato-value">+55 (99) 9 9999-9999</p></div>
+          </div>
+          <div class="contato-card reveal" style="--delay:.05s">
+            <div class="contato-icon-wrap">📷</div>
+            <div><p class="contato-label">Instagram</p><p class="contato-value">@lumiere.shoes</p></div>
+          </div>
+          <div class="contato-card reveal" style="--delay:.1s">
+            <div class="contato-icon-wrap">📍</div>
+            <div><p class="contato-label">Endereço</p><p class="contato-value">Rua das Flores, 123 — Centro</p></div>
+          </div>
+          <div class="contato-card reveal" style="--delay:.15s">
+            <div class="contato-icon-wrap">🕐</div>
+            <div><p class="contato-label">Horário</p><p class="contato-value">Seg–Sáb, 9h às 19h</p></div>
+          </div>
+        </div>
+        <div class="contato-cta-box reveal">
+          <div class="cta-glow"></div>
+          <h2>Lumière ✦</h2>
+          <p>Sapatos premium para quem tem estilo próprio.</p>
+          <a href="https://wa.me/5599999999999" target="_blank" class="btn-glow-green">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.05 2C6.495 2 1.988 6.507 1.986 12.062c-.001 1.966.516 3.885 1.498 5.566L2 22l4.484-1.175a10.117 10.117 0 0 0 5.562 1.594h.004c5.554 0 10.062-4.507 10.064-10.062.001-2.69-1.046-5.217-2.948-7.117A9.947 9.947 0 0 0 12.05 2z"/></svg>
+            <span>Chamar no WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <p class="footer-logo">Lumière ✦</p>
+        <p class="footer-desc">A loja de sapatos premium que você estava esperando. Estilo, conforto e elegância em cada par.</p>
+      </div>
+      <div>
+        <h4>Navegue</h4>
+        <ul>
+          <li><a href="#" onclick="navigate('home'); return false;">Início</a></li>
+          <li><a href="#" onclick="navigate('produtos'); return false;">Coleção</a></li>
+          <li><a href="#" onclick="navigate('contato'); return false;">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li>💬 +55 (99) 9 9999-9999</li>
+          <li>📷 @lumiere.shoes</li>
+          <li>📍 Rua das Flores, 123</li>
+          <li>🕐 Seg–Sáb, 9h–19h</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <p style="opacity:.55;font-size:.85rem;margin-bottom:1rem">Receba novidades em primeira mão.</p>
+        <div class="newsletter">
+          <input type="email" placeholder="seu@email.com" class="newsletter-input" />
+          <button class="newsletter-btn">✦</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Lumière. Todos os direitos reservados.</p>
+      <p class="footer-love">Feito com ♥ para você</p>
+    </div>
+  </footer>
+
+  <!-- DRAWER CARRINHO -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleCarrinho()"></div>
+  <aside class="drawer" id="drawer">
+    <div class="drawer-header">
+      <div>
+        <h2>Carrinho</h2>
+        <p class="drawer-sub" id="drawerSub">0 itens</p>
+      </div>
+      <button onclick="toggleCarrinho()" class="drawer-close">✕</button>
+    </div>
+    <div class="drawer-items" id="drawerItems"></div>
+    <div class="drawer-footer" id="drawerFooter"></div>
+  </aside>
+
+  <!-- WhatsApp FLOAT -->
+  <a href="https://wa.me/5599999999999" target="_blank" class="wa-float" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.05 2C6.495 2 1.988 6.507 1.986 12.062c-.001 1.966.516 3.885 1.498 5.566L2 22l4.484-1.175a10.117 10.117 0 0 0 5.562 1.594h.004c5.554 0 10.062-4.507 10.064-10.062.001-2.69-1.046-5.217-2.948-7.117A9.947 9.947 0 0 0 12.05 2z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+
+  <!-- ===== PROTEÇÃO ANTI-INSPEÇÃO ===== -->
+  <script>
+    (function () {
+      'use strict';
+
+      // ── 1. Bloquear botão direito ──────────────────────────────────────
+      document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+        return false;
+      });
+
+      // ── 2. Bloquear atalhos de teclado de DevTools ────────────────────
+      document.addEventListener('keydown', function (e) {
+        const key = e.key;
+        const ctrl = e.ctrlKey || e.metaKey; // suporte Mac (Cmd)
+        const shift = e.shiftKey;
+
+        // F12 — DevTools
+        if (key === 'F12') {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+
+        // Ctrl+U — Ver código-fonte
+        if (ctrl && key === 'u') {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+
+        // Ctrl+S — Salvar página
+        if (ctrl && key === 's') {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+
+        // Ctrl+Shift+I — DevTools (Elements)
+        if (ctrl && shift && key === 'I') {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+
+        // Ctrl+Shift+J — DevTools (Console)
+        if (ctrl && shift && key === 'J') {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+
+        // Ctrl+Shift+C — DevTools (Inspector)
+        if (ctrl && shift && key === 'C') {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+
+        // Ctrl+Shift+K — Console Firefox
+        if (ctrl && shift && key === 'K') {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+
+        // Ctrl+Shift+E — Network Firefox
+        if (ctrl && shift && key === 'E') {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+
+        // Ctrl+A — Selecionar tudo (opcional, remova se quiser manter)
+        if (ctrl && key === 'a') {
+          e.preventDefault();
+          return false;
+        }
+
+        // Ctrl+P — Imprimir (exporta o HTML)
+        if (ctrl && key === 'p') {
+          e.preventDefault();
+          return false;
+        }
+      }, true); // capture: true para pegar antes de outros handlers
+
+      // ── 3. Bloquear seleção de texto ──────────────────────────────────
+      document.addEventListener('selectstart', function (e) {
+        // Permitir seleção apenas em inputs e textareas
+        const tag = e.target.tagName;
+        if (tag !== 'INPUT' && tag !== 'TEXTAREA') {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      // ── 4. Bloquear drag (arrastar elementos) ─────────────────────────
+      document.addEventListener('dragstart', function (e) {
+        e.preventDefault();
+        return false;
+      });
+
+      // ── 5. Detectar abertura do DevTools por tamanho de janela ────────
+      (function detectDevTools() {
+        let devOpen = false;
+        const threshold = 160;
+
+        setInterval(function () {
+          const widthDiff  = window.outerWidth  - window.innerWidth;
+          const heightDiff = window.outerHeight - window.innerHeight;
+
+          if (widthDiff > threshold || heightDiff > threshold) {
+            if (!devOpen) {
+              devOpen = true;
+              // Redirecionar ou mostrar aviso
+              document.body.innerHTML =
+                '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#08070a;color:#c9a96e;font-family:Inter,sans-serif;flex-direction:column;gap:16px;">' +
+                '<svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>' +
+                '<h1 style="font-size:1.5rem;margin:0">Acesso Restrito</h1>' +
+                '<p style="color:#888;margin:0">Esta página não pode ser inspecionada.</p>' +
+                '</div>';
+            }
+          } else {
+            devOpen = false;
+          }
+        }, 500);
+      })();
+
+      // ── 6. Bloquear via console debugger loop ─────────────────────────
+      // Dificulta uso do console em tempo real
+      (function consoleBlock() {
+        try {
+          const noop = function () {};
+          const methods = ['log','debug','info','warn','error','table','dir'];
+          if (typeof console !== 'undefined') {
+            // Em produção, silenciar console (ative abaixo comentando a linha)
+            // methods.forEach(function(m){ console[m] = noop; });
+          }
+        } catch (_) {}
+      })();
+
+    })();
+  </script>
+</body>
+</html>
